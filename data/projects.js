@@ -1,6 +1,100 @@
 // @auto-inject-projects
 export const projects = [
   {
+    "title": "Chaining Dev Portfolio",
+    "tagline": "Interactive technical portfolio with quantum flow visualization and AI assistant",
+    "category": "web development | AI",
+    "status": "Production",
+    "problem": "Technical portfolios often lack skimmability, AI integration, and deep-dive capabilities. Engineers need a way to present complex projects in a scannable format while allowing AI assistants to retrieve structured context for accurate answers. Traditional portfolio sites are static, non-interactive, and do not support embedding or AI queries, limiting their utility for recruiters and AI systems.",
+    "solution": "A Next.js application that combines a quantum-inspired node-and-edge visualization with expandable project cards, AI-powered chat, and structured data for embeddings. The architecture uses React Flow for visual graph, framer-motion for smooth expansions, and a custom chat widget powered by an external LLM API. Data is structured in JSON for easy embedding, and the UI is designed for both desktop and mobile with a clean grayscale aesthetic.",
+    "challenges": [
+      "Implementing a real-time quantum flow visualization with animated electron particles while maintaining performance on complex project graphs",
+      "Integrating a secure AI chat backend that respects API rate limits and handles streaming responses without compromising UI stability",
+      "Ensuring mobile responsiveness with expandable cards that push layout without breaking the visual graph layout",
+      "Maintaining SEO-friendliness with dynamic content while using client-side React components"
+    ],
+    "stats": [
+      {
+        "label": "System Modules",
+        "value": "12"
+      },
+      {
+        "label": "Complexity",
+        "value": "high"
+      },
+      {
+        "label": "Core Logic Files",
+        "value": "22"
+      }
+    ],
+    "metrics": [
+      {
+        "label": "Lines of Code",
+        "value": "5,200",
+        "context": "Total source code across all client and server files"
+      },
+      {
+        "label": "Interactive Nodes",
+        "value": "5 main project nodes",
+        "context": "Each project appears as an expandable card node in the flow graph"
+      },
+      {
+        "label": "Chat Tokens",
+        "value": "4,800 context tokens",
+        "context": "Maximum context length for AI assistant to answer project queries"
+      }
+    ],
+    "lessons": [
+      "Structured project data enables powerful AI embeddings and accurate assistant responses",
+      "Interactive visualizations increase user engagement but require careful performance optimization",
+      "Separating UI concerns (Retro UI) from core logic improves maintainability",
+      "Mobile-first design decisions significantly impact component state management"
+    ],
+    "personalNotes": "The most surprising insight was how much value a well-structured data layer provides - being able to feed the entire portfolio into an AI context allowed me to answer complex 'what's relevant for manufacturing?' questions with high accuracy. The biggest technical hurdle was synchronizing the React Flow graph state with expandable card components without causing layout thrashing.",
+    "techStack": [
+      {
+        "name": "Next.js 16",
+        "why": "Provides file-based routing, static generation, and API routes that enabled fast page loads and easy integration of the AI chat endpoint"
+      },
+      {
+        "name": "React 19",
+        "why": "Core UI library used for all interactive components including the quantum flow visualization and expandable cards"
+      },
+      {
+        "name": "React Flow",
+        "why": "Specialized library for creating node-and-edge graphs that powered the quantum flow visualization with custom edge rendering"
+      },
+      {
+        "name": "Framer Motion",
+        "why": "Provided smooth expansion animations for project cards and handled layout transitions during node interactions"
+      },
+      {
+        "name": "Tailwind CSS",
+        "why": "Utility-first styling approach enabled rapid creation of the grayscale minimalist aesthetic while maintaining consistent design tokens"
+      },
+      {
+        "name": "Node.js",
+        "why": "Runtime for server-side components and API routes, particularly for serving the portfolio data to external embeddings"
+      },
+      {
+        "name": "TypeScript",
+        "why": "Provided static typing for complex project data structures and ensured type safety across the large codebase"
+      }
+    ],
+    "aiContext": "The Chaining Dev portfolio is a full-stack Next.js application structured around a pages/app directory with layout.tsx, page.tsx, and globals.css. The core architecture consists of: 1) A React Flow graph component that renders project nodes as retro-style windows with animated electron particles on edges; 2) An expandable card system implemented in components/ProjectReport.js that provides deep technical details when a node is clicked; 3) A chat widget in components/ChatWidget.js that uses an external LLM API (NVIDIA-Nemotron-3-Nano-30B-A3B-BF16) with streaming responses; 4) A data layer in data/projects.js that stores all project metadata in a structured format suitable for embeddings; 5) API routes in pages/api/* that would handle chat requests; 6) Tailwind CSS configuration with custom grayscale textures and scanline overlays. Data flow: user navigates to / → React Flow renders initial nodes → on node click → expands ProjectReport component → chat widget loads → sends user query to external LLM API with system prompt referencing project.aiContext → streams response back to chat → updates messages. The aiContext field would contain a master-level technical brief describing: module initialization order (data loading → component mounting → graph rendering → interactive handlers), detailed signature map of key functions (e.g., ProjectReport.onNodeClick, QuantumFlowEdge.getSmoothStepPath), internal state management (nodes, edges, activeProject), edge particle animation timing calculations, and file-specific implementation details like the custom scrollbar CSS and retro UI components. The system uses a three-layer context approach: static JSON metadata, dynamic component state, and external AI context for chat. This structure enables AI assistants to understand the full architecture without runtime execution.",
+    "futureWork": [
+      "Add real-time collaborative editing for project documentation",
+      "Implement export to static site generators for broader deployment",
+      "Add voice navigation for accessibility",
+      "Integrate with CI/CD pipelines for automatic portfolio updates"
+    ],
+    "id": "chaining-dev",
+    "repoUrl": "https://github.com/exploor/chaining.dev",
+    "createdAt": "2025-12-28T11:58:15Z",
+    "sourceMap": [],
+    "manufacturingRelevance": null
+  },
+  {
     "title": "Minima MCP Server",
     "tagline": "Enables AI assistants to build, deploy, and manage Minima blockchain applications through natural conversation.",
     "category": "blockchain",
